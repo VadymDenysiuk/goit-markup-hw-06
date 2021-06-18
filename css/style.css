@@ -618,8 +618,10 @@ body {
   border: 1px solid rgba(0, 0, 0, 0.1);
   cursor: pointer;
   transition: color 250ms var(--cubic);
+  outline: none;
 }
-.close-modal:hover {
+.close-modal:hover,
+.close-modal:focus {
   color: var(--accent-color);
 }
 .close-icon {
@@ -638,6 +640,11 @@ body {
   line-height: 1.15;
   color: var(--title-text-color);
 }
+.input-position {
+  position: relative;
+  display: block;
+  color: var(--title-text-color);
+}
 .modal-input {
   width: 100%;
   border: 1px solid rgba(33, 33, 33, 0.2);
@@ -647,6 +654,22 @@ body {
   cursor: pointer;
   transition: border 250ms var(--cubic);
 }
+.modal-input:focus-within,
+.modal-textarea:focus-within {
+  border: 1px solid var(--accent-color);
+}
+
+.modal-icon {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  fill: currentColor;
+  transform: translateY(-50%);
+  transition: fill 250ms var(--cubic);
+}
+.modal-input:focus + .modal-icon {
+  fill: var(--accent-color);
+}
 .modal-label {
   display: inline-block;
   margin-bottom: 4px;
@@ -655,7 +678,6 @@ body {
   letter-spacing: 0.01em;
 }
 .modal-textarea {
-  /*position: relative;*/
   width: 100%;
   height: 120px;
   border: 1px solid rgba(33, 33, 33, 0.2);
@@ -672,6 +694,7 @@ body {
   letter-spacing: 0.01em;
   color: rgba(117, 117, 117, 0.5);
 }
+
 .modal-checkbox {
   margin-top: 20px;
   margin-bottom: 30px;
@@ -684,39 +707,14 @@ body {
   height: 1px;
   margin: -1px;
 }
-.checkbox-text {
-  margin-left: 8.38px;
-}
-
 .checkbox-old:checked + .checkbox-new {
   background-color: var(--accent-color);
   border: var(--accent-color);
 }
-
 .checkbox-new {
   vertical-align: middle;
   margin-right: 8.38px;
   fill: var(--primary-white-color);
   border: 2px solid var(--title-text-color);
   border-radius: 2px;
-}
-.input-position {
-  position: relative;
-  display: block;
-  color: var(--title-text-color);
-}
-.modal-icon {
-  position: absolute;
-  top: 50%;
-  left: 12px;
-  fill: currentColor;
-  transform: translateY(-50%);
-  transition: fill 250ms var(--cubic);
-}
-.modal-input:focus-within,
-.modal-textarea:focus-within {
-  border: 1px solid var(--accent-color);
-}
-.modal-input:focus + .modal-icon {
-  fill: var(--accent-color);
 }
