@@ -55,6 +55,28 @@ body {
   line-height: 1.71;
   font-weight: 400;
 }
+
+.button-main {
+  display: block;
+  margin: 0 auto;
+  border-radius: 4px;
+  min-width: 200px;
+  height: 50px;
+  text-align: center;
+  color: var(--primary-white-color);
+  background-color: var(--accent-color);
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.87;
+  cursor: pointer;
+  border: none;
+  transition: background-color 250ms var(--cubic);
+}
+.button-main:hover,
+.button-main:focus {
+  background-color: var(--btn-hero-hover);
+}
 /*logo*/
 .logo {
   padding-top: 25px;
@@ -189,29 +211,6 @@ body {
   font-size: 44px;
   line-height: 1.36;
   text-transform: uppercase;
-}
-
-.button-hero {
-  display: block;
-  margin: 0 auto;
-  border-radius: 4px;
-  /*padding: 10px;*/
-  min-width: 200px;
-  height: 50px;
-  text-align: center;
-  color: var(--primary-white-color);
-  background-color: var(--accent-color);
-  font-family: inherit;
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 1.87;
-  cursor: pointer;
-  border: none;
-  transition: background-color 250ms var(--cubic);
-}
-.button-hero:hover,
-.button-hero:focus {
-  background-color: var(--btn-hero-hover);
 }
 
 /*section*/
@@ -618,6 +617,7 @@ body {
   border-radius: 50%;
   border: 1px solid rgba(0, 0, 0, 0.1);
   cursor: pointer;
+  transition: color 250ms var(--cubic);
 }
 .close-modal:hover {
   color: var(--accent-color);
@@ -644,6 +644,8 @@ body {
   border-radius: 4px;
   padding: 12px 42px;
   outline: none;
+  cursor: pointer;
+  transition: border 250ms var(--cubic);
 }
 .modal-label {
   display: inline-block;
@@ -661,6 +663,8 @@ body {
   border-radius: 4px;
   resize: none;
   outline: none;
+  cursor: pointer;
+  transition: border 250ms var(--cubic);
 }
 .modal-textarea::placeholder {
   font-size: 12px;
@@ -679,28 +683,27 @@ body {
   width: 1px;
   height: 1px;
   margin: -1px;
-  /*border: 0;*/
-  /*padding: 0;*/
-  /*overflow: hidden;*/
 }
+.checkbox-text {
+  margin-left: 8.38px;
+}
+
 .checkbox-old:checked + .checkbox-new {
-  /*   background-color: var(--accent-color);
- */
-  display: inline-block;
-  fill: red;
+  background-color: var(--accent-color);
+  border: var(--accent-color);
 }
-.checkbox-old:checked + .checkbox-border {
-  display: none;
-}
+
 .checkbox-new {
-  display: none;
-}
-.checkbox-border {
+  vertical-align: middle;
+  margin-right: 8.38px;
+  fill: var(--primary-white-color);
+  border: 2px solid var(--title-text-color);
+  border-radius: 2px;
 }
 .input-position {
   position: relative;
-  color: #212121;
   display: block;
+  color: var(--title-text-color);
 }
 .modal-icon {
   position: absolute;
@@ -708,16 +711,12 @@ body {
   left: 12px;
   fill: currentColor;
   transform: translateY(-50%);
+  transition: fill 250ms var(--cubic);
 }
 .modal-input:focus-within,
 .modal-textarea:focus-within {
   border: 1px solid var(--accent-color);
-  cursor: pointer;
 }
 .modal-input:focus + .modal-icon {
   fill: var(--accent-color);
-}
-.checkbox-new {
-  border-radius: 2px;
-  vertical-align: middle;
 }
