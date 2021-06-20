@@ -712,8 +712,8 @@ body {
   text-align: center;
   cursor: pointer;
 }
-.modal-checkbox:hover .checkbox-new,
-.modal-checkbox:focus-within .checkbox-new {
+.checkbox-new:hover,
+.checkbox-old:focus + .checkbox-new {
   border-color: var(--accent-color);
 }
 .checkbox-old {
